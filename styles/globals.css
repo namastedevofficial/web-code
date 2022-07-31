@@ -1,0 +1,21 @@
+@import url('/fonts/fonts.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+@layer base {
+  html {
+    font-family: "Nunito", sans-serif;
+  }
+}
+
+body {
+  color: #e05c46;
+  color: #edae2f;
+}
