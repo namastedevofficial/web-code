@@ -7,10 +7,16 @@ module.exports = {
   theme: {
     extend: {},
     screens: {
+      xs: '300px',
       sm: '480px',
       md: '768px',
       lg: '976px',
       xl: '1440px',
+      b0: '368px',
+      b1: '720px',
+      b2: '1072px',
+      b3: '1424px',
+      b4: '1776px',
     },
     colors: {
       grey2: "#b2becd",

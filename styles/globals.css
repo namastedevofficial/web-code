@@ -22,5 +22,4 @@ body {
 
 .courses-container {
   grid-template-columns: repeat(auto-fill,minmax(320px, 1fr));
-  max-width: calc(320px*var(--num-cards) + var(--feed-gap)*(var(--num-cards) - 1));
 }

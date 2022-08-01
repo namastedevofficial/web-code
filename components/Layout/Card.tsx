@@ -15,7 +15,7 @@ export default function Card(props: CardContent) {
     props;
   return (
     <Link href={courseUrl}>
-      <a className="rounded-md border-2 border-grey5 p-2 block w-80 hover:border-grey4">
+      <a className="rounded-md border-2 border-grey5 p-2 block hover:border-grey4">
         <Image
           src={imageUrl}
           width={320}
