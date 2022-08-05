@@ -1,9 +1,8 @@
-@import url('/fonts/fonts.css');
+@import url("/fonts/fonts.css");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 .flex-center {
   @apply flex justify-center items-center;
@@ -21,5 +20,51 @@ body {
 }
 
 .courses-container {
-  grid-template-columns: repeat(auto-fill,minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+/* scrollbar */
+.slim-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.slim-scrollbar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.slim-scrollbar::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.slim-scrollbar::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Header */
+
+header nav a.active {
+  border-bottom: 2px solid #fff;
+  opacity: 0.95;
+}
+
+/* Episode Card */
+
+.episodes-menu a.active {
+  background-color: #404040;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.episodes-menu a.active .time-stamp {
+  background-color: #525252;
+}
+
+.episodes-menu a.active .check-circle,
+.episodes-menu .check-circle.completed {
+  border-color: #22c55e;
 }

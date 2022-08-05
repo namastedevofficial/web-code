@@ -1,6 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import { useEffect, useState } from "react";
 import Card from "../../components/Layout/Card";
 
 const Courses: NextPage = () => {
@@ -8,7 +6,7 @@ const Courses: NextPage = () => {
     {
       id: "0",
       title: "Namaste JavaScript Intro",
-      courseUrl: "/courses/namastejs",
+      courseUrl: "/courses/namastejs0",
       imageUrl: "/course-images/namaste-javascript.jpg",
       description: "Learn all about how JavaScript works behind the scenes",
       duration: 4.5,
@@ -17,7 +15,7 @@ const Courses: NextPage = () => {
     {
       id: "1",
       title: "Map, Filter and Reduce",
-      courseUrl: "/courses/namastejs",
+      courseUrl: "/courses/namastejs1",
       imageUrl: "/course-images/map-filter-reduce.jpg",
       description: "Learn most used array methods in JavaScript",
       duration: 8.25,
@@ -26,7 +24,7 @@ const Courses: NextPage = () => {
     {
       id: "2",
       title: "Closures in JavaScript",
-      courseUrl: "/courses/namastejs",
+      courseUrl: "/courses/namastejs2",
       imageUrl: "/course-images/closure.jpg",
       description: "Learn all about how closures work in JavaScript",
       duration: 8,
@@ -35,7 +33,7 @@ const Courses: NextPage = () => {
     {
       id: "3",
       title: "Higher Order Functions",
-      courseUrl: "/courses/namastejs",
+      courseUrl: "/courses/namastejs3",
       imageUrl: "/course-images/higher-order-functions.jpg",
       description: "Higher Order Functions in JavaScript",
       duration: 12.5,
@@ -44,7 +42,7 @@ const Courses: NextPage = () => {
     {
       id: "4",
       title: "Callbacks in JavaScript",
-      courseUrl: "/courses/namastejs",
+      courseUrl: "/courses/namastejs4",
       imageUrl: "/course-images/callbacks.jpg",
       description: "Learn all about callbacks in JavaScript",
       duration: 9,
@@ -53,7 +51,7 @@ const Courses: NextPage = () => {
     {
       id: "5",
       title: "JavaScript Engine Architecture",
-      courseUrl: "/courses/namastejs",
+      courseUrl: "/courses/namastejs5",
       imageUrl: "/course-images/js-engine.jpg",
       description: "Learn all about how JS Engine works behind the scenes",
       duration: 16,

@@ -5,7 +5,14 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        grey2: "#b2becd",
+        grey4: "#5f6368",
+        grey5: "#303134",
+        grey6: "#202124",
+      }
+    },
     screens: {
       xs: '300px',
       sm: '480px',
@@ -18,13 +25,6 @@ module.exports = {
       b3: '1424px',
       b4: '1776px',
     },
-    colors: {
-      grey2: "#b2becd",
-      grey4: "#5f6368",
-      grey5: "#303134",
-      grey6: "#202124",
-      white: "#ffffff",
-    }
   },
   plugins: [],
 }
