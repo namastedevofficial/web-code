@@ -148,7 +148,7 @@ export default function EpisodesMenu() {
     },
   ];
   return (
-    <nav className="episodes-menu slim-scrollbar bg-grey5 overflow-y-scroll h-[var(--episodes-position)] bp1:fixed bp1:top-[58px] bp1:left-0 bp1:h-screen bp1:w-80 bp2:w-96">
+    <nav className="episodes-menu slim-scrollbar bg-grey5 overflow-y-scroll h-[var(--episodes-height)] bp1:fixed bp1:top-[58px] bp1:left-0 bp1:h-screen bp1:w-80 bp2:w-96">
       {episodesList.map((episode, i) => (
         <EpisodeCard
           key={episode.id}

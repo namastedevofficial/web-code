@@ -1,12 +1,21 @@
+import { useRouter } from "next/router";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 import EpisodeOptionsNav from "../widgets/EpisodeOptionsNav";
+import DiscussionSection from "./DiscussionSection";
 import EpisodesMenu from "./EpisodesMenu";
-
+import QnASection from "./QnASection";
+import QuizzesSection from "./QuizzesSection";
 
 export default function EpisodeOptions() {
+  const { width } = useWindowDimensions();
+  const { asPath } = useRouter();
   return (
-    <div className="mt-4 max-w-screen-b2 mx-auto">
+    <div className="episode-options mt-4 max-w-screen-b2 mx-auto">
       <EpisodeOptionsNav />
-      <EpisodesMenu />
+      {(asPath.includes("#episodes") || width > 1020) && <EpisodesMenu />}
+      {asPath.includes("#quizzes") && <QuizzesSection />}
+      {asPath.includes("#qna") && <QnASection />}
+      {asPath.includes("#discussions") && <DiscussionSection />}
     </div>
-  )
+  );
 }

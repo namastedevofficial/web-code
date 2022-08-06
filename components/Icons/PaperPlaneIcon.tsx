@@ -11,7 +11,7 @@ PaperPlaneIcon.defaultProps = {
 export default function PaperPlaneIcon(props: PaperPlaneIconDetails) {
   const { fillColor, strokeColor } = props;
   return (
-    <div className="p-3 rounded hover:bg-grey5">
+    <div className="paper-plane p-3 rounded hover:bg-grey5">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className="h-6 w-6 transition-transform rotate-45 -mt-[2px] -mr-[2px]"

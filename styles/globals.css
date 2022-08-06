@@ -14,9 +14,6 @@
   }
 }
 
-.courses-container {
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-}
 
 /* scrollbar */
 .slim-scrollbar::-webkit-scrollbar {
@@ -41,10 +38,16 @@
   background: rgba(255, 255, 255, 0.3);
 }
 
+/* Courses Page */
+
+.courses {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
 /* Header */
 
 header nav a.active {
-  border-bottom: 2px solid #fff;
+  border-bottom: 3px solid #fff;
   opacity: 0.95;
 }
 

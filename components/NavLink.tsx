@@ -18,7 +18,6 @@ export default function NavLink(props: NavLinkProps) {
     const { asPath } = useRouter();
     const isActive = exact ? asPath === href : asPath.startsWith(href) || asPath.includes(href);
 
-
     if (isActive) {
         restProps.className += ' active';
     }
