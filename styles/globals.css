@@ -63,3 +63,14 @@ header nav a.active {
 .episodes-menu .check-circle.completed {
   border-color: #22c55e;
 }
+
+/* Episode Nav Options */
+
+.episode-options-nav a {
+  border-bottom: 3px solid transparent;
+}
+
+.episode-options-nav a.active {
+  border-bottom: 3px solid #fff;
+  opacity: 0.95;
+}

@@ -24,6 +24,7 @@ module.exports = {
       b2: '1072px',
       b3: '1424px',
       b4: '1776px',
+      bp1: '1020px',
       bp2: '1330px',
     },
   },

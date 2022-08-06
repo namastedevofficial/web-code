@@ -9,9 +9,9 @@ export default function LoveIcon() {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6"
-        fill={liked ? 'red': 'transparent'}
+        fill={liked ? '#ef4444': 'transparent'}
         viewBox="0 0 24 24"
-        stroke={liked ? 'red': 'white'}
+        stroke={liked ? '#ef4444': 'white'}
         strokeWidth={2}
       >
         <path

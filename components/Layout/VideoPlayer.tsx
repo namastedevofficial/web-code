@@ -10,7 +10,7 @@ interface VideoDetails {
 export default function VideoPlayer(props: VideoDetails) {
   const { title, embedId } = props;
   return (
-    <div className="video-player max-w-screen-b2 mx-auto ">
+    <div className="video-player max-w-screen-b2 mx-auto">
       <iframe
         className="w-full aspect-video shadow-md border-x border-t rounded-t-md border-gray-700"
         src={`https://www.youtube.com/embed/${embedId}?rel=0`}
@@ -18,11 +18,11 @@ export default function VideoPlayer(props: VideoDetails) {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       ></iframe>
-      <div className="flex items-center justify-between py-1 px-3 border-x border-b rounded-b-md border-gray-700">
-        <h1 className="text-xl font-bold opacity-90">
+      <div className="flex items-center justify-between py-2 bp1:py-1 px-3 border-x border-b rounded-b-md border-gray-700">
+        <h1 className="bp1:text-xl font-bold opacity-90">
           {title}
         </h1>
-        <div className="flex">
+        <div className="hidden bp1:flex">
           <LoveIcon />
           <PaperPlaneIcon />
           <BookmarkIcon />
