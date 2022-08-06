@@ -148,7 +148,7 @@ export default function EpisodesMenu() {
     },
   ];
   return (
-    <nav className="episodes-menu slim-scrollbar fixed h-screen w-[440px] bg-grey5 overflow-y-scroll">
+    <nav className="episodes-menu slim-scrollbar fixed h-screen w-80 bp2:w-96 bg-grey5 overflow-y-scroll">
       {episodesList.map((episode, i) => (
         <EpisodeCard
           key={episode.id}
