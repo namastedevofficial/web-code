@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import CheckIcon from "../Icons/CheckIcon";
 import NavLink from "../NavLink";
 
@@ -14,12 +15,24 @@ interface EpisodeCardContent {
 
 export default function EpisodeCard(prop: EpisodeCardContent) {
   const { id, episodeUrl, title, duration, episodeNumber } = prop;
-  const [completed, setCompleted] = useState('');
-  const toggleCompleted = () => setCompleted(completed ? '' : 'completed');
+  const [completed, setCompleted] = useState("");
+  const toggleCompleted = () => setCompleted(completed ? "" : "completed");
+
+  const [episodeOption, setEpisodeOption] = useState("#quizzes");
+
+  const { asPath } = useRouter();
+
+  useEffect(() => {
+    if (asPath.indexOf("#") !== -1) {
+      setEpisodeOption(asPath.slice(asPath.indexOf("#")));
+    } else {
+      setEpisodeOption("#quizzes");
+    }
+  }, [asPath]);
 
   return (
     <NavLink
-      href={`${episodeUrl}${id}`}
+      href={`${episodeUrl}${id}${episodeOption}`}
       className="group px-4 py-3 flex-center hover:bg-neutral-700 hover:shadow"
       exact={true}
     >

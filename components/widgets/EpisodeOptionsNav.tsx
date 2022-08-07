@@ -1,23 +1,18 @@
-import { useRouter } from "next/router";
 import React, { useEffect, useRef } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import NavLink from "../NavLink";
 
 export default function EpisodeOptionsNav() {
   const episodesNav = useRef<HTMLElement>(null);
-  const router = useRouter()
-  const { width, height } = useWindowDimensions();
+  const { height } = useWindowDimensions();
 
   const episodesNavBottomPosition = episodesNav.current?.getBoundingClientRect()?.bottom ?? 0;
   const episodesMenuHeight = height - episodesNavBottomPosition;
 
   useEffect(() => {
     document.body.setAttribute('style', `--episodes-height: ${episodesMenuHeight}px`);
-  })
+  }, [episodesMenuHeight])
 
-  if(width > 1020) {
-    // router.push('')
-  }
   
   return (
     <nav
