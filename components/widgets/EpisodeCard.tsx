@@ -33,7 +33,7 @@ export default function EpisodeCard(prop: EpisodeCardContent) {
   return (
     <NavLink
       href={`${episodeUrl}${id}${episodeOption}`}
-      className="group px-4 py-3 flex-center hover:bg-neutral-700 hover:shadow"
+      className="group px-4 py-3 flex-center shadow hover:bg-neutral-700 hover:shadow"
       exact={true}
     >
       <div
