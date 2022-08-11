@@ -1,14 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
-export interface CardContent {
-  id: string;
-  courseUrl: string;
-  imageUrl: string;
-  title: string;
-  episodeCount: number;
-  author: string;
-}
+import CardContent from "../../interfaces/CardContent";
 
 export default function Card(props: CardContent) {
   const { courseUrl, imageUrl, title, episodeCount, author } = props;
