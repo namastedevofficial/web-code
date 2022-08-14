@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { FC } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import EpisodeOptionsNav from "../widgets/EpisodeOptionsNav";
 import DiscussionSection from "./DiscussionSection";
@@ -6,7 +7,7 @@ import EpisodesMenu from "./EpisodesMenu";
 import QnASection from "./QnASection";
 import QuizzesSection from "./QuizzesSection";
 
-export default function EpisodeOptions() {
+const EpisodeOptions: FC = () => {
   const { width } = useWindowDimensions();
   const { asPath } = useRouter();
   return (
@@ -18,4 +19,6 @@ export default function EpisodeOptions() {
       {asPath.includes("#discussions") && <DiscussionSection />}
     </div>
   );
-}
+};
+
+export default EpisodeOptions;

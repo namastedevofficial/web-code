@@ -1,3 +1,4 @@
+import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import EpisodeOptions from "../../../components/Layout/EpisodeOptions";
@@ -5,7 +6,7 @@ import VideoPlayer from "../../../components/Layout/VideoPlayer";
 import CoursesContext from "../../../context/CoursesContext";
 import EpisodeCardContent from "../../../interfaces/EpisodeCardContents";
 
-export default function Episode() {
+const Episode: NextPage = () => {
   const { query } = useRouter();
   const { currentEpisodesList } = useContext(CoursesContext);
 
@@ -29,3 +30,5 @@ export default function Episode() {
     </div>
   );
 }
+
+export default Episode

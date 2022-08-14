@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { FC } from 'react'
 
-export default function Logo() {
+const Logo: FC = () => {
   return (
     <Link href="/">
         <a className='flex-center space-x-2'>
@@ -16,3 +17,5 @@ export default function Logo() {
       </Link>
   )
 }
+
+export default Logo

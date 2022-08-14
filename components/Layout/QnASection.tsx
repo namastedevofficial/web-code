@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-export default function QnASection() {
+const QnASection: FC = () =>{
   return (
     <div className="qna-section">QnASection</div>
   )
 }
+
+export default QnASection;

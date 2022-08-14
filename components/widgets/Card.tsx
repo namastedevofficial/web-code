@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FC } from "react";
 import CardContent from "../../interfaces/CardContent";
 
-export default function Card(props: CardContent) {
-  const { courseUrl, imageUrl, title, episodeCount, author } = props;
+const Card: FC<CardContent> = ({ courseUrl, imageUrl, title, episodeCount, author }) => {
   return (
     <Link href={courseUrl}>
       <a className="rounded-md border-2 border-grey5 p-2 block hover:border-grey4">
@@ -23,3 +23,5 @@ export default function Card(props: CardContent) {
     </Link>
   );
 }
+
+export default Card

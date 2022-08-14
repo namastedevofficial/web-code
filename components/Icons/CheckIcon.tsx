@@ -1,9 +1,10 @@
-interface CheckIconDetails {
+import { FC } from "react";
+
+interface CheckIconProps {
   color: string;
 }
 
-export default function CheckIcon(props: CheckIconDetails) {
-  const { color } = props;
+const CheckIcon: FC<CheckIconProps> = ({ color }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,4 +17,6 @@ export default function CheckIcon(props: CheckIconDetails) {
       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
     </svg>
   );
-}
+};
+
+export default CheckIcon;

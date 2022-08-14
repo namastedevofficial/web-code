@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { FC, useEffect, useRef } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
-import NavLink from "../NavLink";
+import NavLink from "../utils/NavLink";
 
-export default function EpisodeOptionsNav() {
+const EpisodeOptionsNav: FC = () => {
   const episodesNav = useRef<HTMLElement>(null);
   const { height } = useWindowDimensions();
 
@@ -34,3 +34,5 @@ export default function EpisodeOptionsNav() {
     </nav>
   );
 }
+
+export default EpisodeOptionsNav

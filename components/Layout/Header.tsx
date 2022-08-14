@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import NavLink from "../NavLink";
+import NavLink from "../utils/NavLink";
 import Logo from "../widgets/Logo";
 import SearchBar from "../widgets/SearchBar";
 

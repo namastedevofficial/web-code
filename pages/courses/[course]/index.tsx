@@ -1,12 +1,13 @@
+import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
 import CoursesContext from "../../../context/CoursesContext";
-import { getEpisodesList } from "../../../data/coursesData";
+import { getEpisodesList } from "../../../service/YouTubeDataService";
 import CardContent from "../../../interfaces/CardContent";
 
-const Course = () => {
+const Course: NextPage = () => {
   const { coursesList, currentEpisodesList, updateCurrentEpisodesList } =
     useContext(CoursesContext);
   const {

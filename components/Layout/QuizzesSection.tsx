@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-export default function QuizzesSection() {
+const QuizzesSection: FC = () =>{
   return (
     <div className="quizzes-section">QuizzesSection</div>
   )
 }
+
+export default QuizzesSection;

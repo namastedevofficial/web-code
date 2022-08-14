@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import React, { FC, useEffect, useState } from "react";
 import EpisodeCardContent from "../../interfaces/EpisodeCardContents";
 import CheckIcon from "../Icons/CheckIcon";
-import NavLink from "../NavLink";
+import NavLink from "../utils/NavLink";
 
 const EpisodeCard: FC<EpisodeCardContent> = ({ episodeId, title, episodeNumber }) => {
   const [completed, setCompleted] = useState("");

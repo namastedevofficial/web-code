@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-export default function DiscussionSection() {
+const DiscussionSection: FC = () => {
   return (
     <div className="discussion-section">DiscussionSection</div>
   )
 }
+
+export default DiscussionSection;

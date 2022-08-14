@@ -1,17 +1,16 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 
-export default function LoveIcon() {
-
-  const [liked, setLiked] = useState(false)
-  const toggleLike = () => setLiked(!liked)
+const LoveIcon: FC = () => {
+  const [liked, setLiked] = useState(false);
+  const toggleLike = () => setLiked(!liked);
   return (
     <div className="p-3 hover:bg-grey5 rounded" onClick={toggleLike}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6"
-        fill={liked ? '#ef4444': 'transparent'}
+        fill={liked ? "#ef4444" : "transparent"}
         viewBox="0 0 24 24"
-        stroke={liked ? '#ef4444': 'white'}
+        stroke={liked ? "#ef4444" : "white"}
         strokeWidth={2}
       >
         <path
@@ -22,4 +21,6 @@ export default function LoveIcon() {
       </svg>
     </div>
   );
-}
+};
+
+export default LoveIcon;

@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 
-export default function BookmarkIcon() {
+const BookmarkIcon: FC = () => {
   
   const [bookmarked, setBookmarked] = useState(false)
   const toggleBookmark = () => setBookmarked(!bookmarked)
@@ -24,3 +24,5 @@ export default function BookmarkIcon() {
     </div>
   );
 }
+
+export default BookmarkIcon;

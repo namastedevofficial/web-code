@@ -1,10 +1,10 @@
-import { Fragment, useContext, useEffect } from "react";
+import { FC, Fragment, useContext, useEffect } from "react";
 import CoursesContext from "../../context/CoursesContext";
-import { getCoursesList, getExistingCoursesList } from "../../data/coursesData";
+import { getCoursesList, getExistingCoursesList } from "../../service/YouTubeDataService";
 import WrapperComponent from "../../interfaces/WrapperComponent";
 import Header from "./Header";
 
-export default function Layout(props: WrapperComponent) {
+const Layout: FC<WrapperComponent> = ({ children }) => {
   const { updateCoursesList } = useContext(CoursesContext);
 
   useEffect(() => {
@@ -18,7 +18,9 @@ export default function Layout(props: WrapperComponent) {
   return (
     <Fragment>
       <Header />
-      {props.children}
+      {children}
     </Fragment>
   );
-}
+};
+
+export default Layout;
