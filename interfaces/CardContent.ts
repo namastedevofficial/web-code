@@ -1,8 +1,9 @@
 export default interface CardContent {
   id: string;
+  title: string;
   courseUrl: string;
   imageUrl: string;
-  title: string;
+  description: string;
   episodeCount: number;
   author: string;
 }

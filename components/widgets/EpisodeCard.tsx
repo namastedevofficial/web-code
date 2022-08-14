@@ -1,26 +1,16 @@
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
+import EpisodeCardContent from "../../interfaces/EpisodeCardContents";
 import CheckIcon from "../Icons/CheckIcon";
 import NavLink from "../NavLink";
 
-interface EpisodeCardContent {
-  id: string;
-  episodeUrl: string;
-  imageUrl: string;
-  title: string;
-  description: string;
-  duration: number;
-  episodeNumber: number;
-}
-
-export default function EpisodeCard(prop: EpisodeCardContent) {
-  const { id, episodeUrl, title, duration, episodeNumber } = prop;
+const EpisodeCard: FC<EpisodeCardContent> = ({ episodeId, title, episodeNumber }) => {
   const [completed, setCompleted] = useState("");
   const toggleCompleted = () => setCompleted(completed ? "" : "completed");
 
   const [episodeOption, setEpisodeOption] = useState("#quizzes");
 
-  const { asPath } = useRouter();
+  const { asPath, query } = useRouter();
 
   useEffect(() => {
     if (asPath.indexOf("#") !== -1) {
@@ -32,12 +22,12 @@ export default function EpisodeCard(prop: EpisodeCardContent) {
 
   return (
     <NavLink
-      href={`${episodeUrl}${id}${episodeOption}`}
+      href={`/courses/${query.course}/${episodeId}${episodeOption}`}
       className="group px-4 py-3 flex-center shadow hover:bg-neutral-700 hover:shadow"
       exact={true}
     >
       <div
-        className={`check-circle w-5 h-5 flex-center rounded-full border-2 border-neutral-400 mr-4 ${completed}`}
+        className={`check-circle min-w-[20px] min-h-[20px] flex-center rounded-full border-2 border-neutral-400 mr-4 ${completed}`}
         onClick={toggleCompleted}
       >
         {completed && <CheckIcon color="#22c55e" />}
@@ -47,8 +37,10 @@ export default function EpisodeCard(prop: EpisodeCardContent) {
         <strong className="opacity-90">{title}</strong>
       </div>
       <div className="time-stamp flex-center w-12 text-xs ml-auto bg-neutral-700 py-1 px-2 rounded shadow group-hover:bg-neutral-600">
-        {Math.round(duration)}m
+        {Math.round(8)}m
       </div>
     </NavLink>
   );
 }
+
+export default EpisodeCard

@@ -1,16 +1,19 @@
-import CoursesData from "../interfaces/CoursesData";
+import CardContent from "../interfaces/CardContent";
+import CoursesYoutubeData from "../interfaces/CoursesYoutubeData";
+import EpisodeCardContent from "../interfaces/EpisodeCardContents";
+import EpisodesYoutubeData from "../interfaces/EpisodesYoutubeData";
 import convertToSlug from "../utils/convertToSlug";
 
 const baseUrl = "https://www.googleapis.com/youtube/v3";
 
 export const getCoursesList = async (
   channelId: string = "UC3N9i_KvKZYP4F84FPIzgPQ"
-) => {
+): Promise<CardContent[]> => {
   const response = await fetch(
-    `${baseUrl}/playlists?part=snippet,contentDetails&channelId=${channelId}&maxResults=50&key=${process.env.NEXT_PUBLIC_YOUTUBE_API_KEY2}`
+    `${baseUrl}/playlists?part=snippet,contentDetails&channelId=${channelId}&maxResults=50&key=${process.env.NEXT_PUBLIC_YOUTUBE_API_KEY}`
   );
 
-  const data: CoursesData = await response.json();
+  const data: CoursesYoutubeData = await response.json();
   console.log(data);
   return data.items.map((item) => {
     return {
@@ -18,23 +21,33 @@ export const getCoursesList = async (
       title: item.snippet.title,
       courseUrl: `/courses/${convertToSlug(item.snippet.title)}`,
       imageUrl: item.snippet.thumbnails.medium.url,
-      author: item.snippet.channelTitle,
       description: item.snippet.description,
       episodeCount: item.contentDetails.itemCount,
+      author: item.snippet.channelTitle,
     };
   });
 };
 
-export const getEpisodesList = async (playlistId: string) => {
+export const getEpisodesList = async (
+  playlistId: string
+): Promise<EpisodeCardContent[]> => {
   const response = await fetch(
     `${baseUrl}/playlistItems/?part=snippet&playlistId=${playlistId}&maxResults=50&key=${process.env.NEXT_PUBLIC_YOUTUBE_API_KEY}`
   );
-  const data = await response.json();
+  const data: EpisodesYoutubeData = await response.json();
 
-  return data;
+  return data.items.map((episode, i) => {
+    return {
+      title: episode.snippet.title,
+      description: episode.snippet.description,
+      imgUrl: episode.snippet.thumbnails.medium.url,
+      episodeId: episode.snippet.resourceId.videoId,
+      episodeNumber: i + 1,
+    };
+  });
 };
 
-export const getExistingCoursesList = () => {
+export const getExistingCoursesList = (): CardContent[] => {
   return [
     {
       id: "PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP",
