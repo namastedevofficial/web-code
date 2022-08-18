@@ -4,8 +4,8 @@ import LoveIcon from '../Icons/LoveIcon'
 import PaperPlaneIcon from '../Icons/PaperPlaneIcon'
 
 interface VideoDetails {
-  title: string;
-  embedId: string;
+	title: string
+	embedId: string
 }
 
 const VideoPlayer: FC<VideoDetails> = ({ title, embedId }) => {

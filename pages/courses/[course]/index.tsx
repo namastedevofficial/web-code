@@ -9,7 +9,7 @@ import CardContent from '../../../interfaces/CardContent'
 
 const Course: NextPage = () => {
 	const { coursesList, currentEpisodesList, updateCurrentEpisodesList } =
-    useContext(CoursesContext)
+		useContext(CoursesContext)
 	const {
 		query: { course },
 	} = useRouter()
@@ -27,7 +27,7 @@ const Course: NextPage = () => {
 
 	useEffect(() => {
 		if (coursePageData) {
-			(async () => {
+			;(async () => {
 				updateCurrentEpisodesList(await getEpisodesList(coursePageData.id))
 			})()
 		}
@@ -42,7 +42,7 @@ const Course: NextPage = () => {
 						<Image
 							src={
 								coursePageData?.imageUrl ||
-                'https://i.ytimg.com/vi/pN6jk0uUrD8/mqdefault.jpg'
+								'https://i.ytimg.com/vi/pN6jk0uUrD8/mqdefault.jpg'
 							}
 							width={320}
 							height={180}

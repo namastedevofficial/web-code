@@ -4,7 +4,11 @@ import EpisodeCardContent from '../../interfaces/EpisodeCardContents'
 import CheckIcon from '../Icons/CheckIcon'
 import NavLink from '../utils/NavLink'
 
-const EpisodeCard: FC<EpisodeCardContent> = ({ episodeId, title, episodeNumber }) => {
+const EpisodeCard: FC<EpisodeCardContent> = ({
+	episodeId,
+	title,
+	episodeNumber,
+}) => {
 	const [completed, setCompleted] = useState('')
 	const toggleCompleted = () => setCompleted(completed ? '' : 'completed')
 

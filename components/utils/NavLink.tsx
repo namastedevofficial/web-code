@@ -3,10 +3,10 @@ import Link from 'next/link'
 import { FC, ReactNode } from 'react'
 
 interface NavLinkProps {
-  href: string;
-  exact?: boolean;
-  className?: string;
-  children: ReactNode;
+	href: string
+	exact?: boolean
+	className?: string
+	children: ReactNode
 }
 
 const NavLink: FC<NavLinkProps> = ({ href, exact, children, ...restProps }) => {

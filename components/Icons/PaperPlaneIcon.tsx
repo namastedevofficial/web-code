@@ -1,8 +1,8 @@
 import { FC } from 'react'
 
 interface PaperPlaneIconProps {
-  fillColor?: string;
-  strokeColor?: string;
+	fillColor?: string
+	strokeColor?: string
 }
 
 const PaperPlaneIcon: FC<PaperPlaneIconProps> = ({

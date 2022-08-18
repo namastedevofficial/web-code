@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 interface CheckIconProps {
-  color: string;
+	color: string
 }
 
 const CheckIcon: FC<CheckIconProps> = ({ color }) => {

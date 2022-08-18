@@ -6,7 +6,9 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended",
         "next/core-web-vitals"
     ],
     "overrides": [
@@ -19,25 +21,10 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier"
     ],
-    "rules": {
-        "indent": [
-            "error",
-            "tab"
-        ],
-        "linebreak-style": [
-            "error",
-            "windows"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "never"
-        ],
-        "react-hooks/exhaustive-deps": "off"
-    }
+    "ignorePatterns": [
+        ".eslintrc.js"
+    ]
 }

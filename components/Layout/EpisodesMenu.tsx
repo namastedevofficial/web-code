@@ -7,7 +7,7 @@ import EpisodeCard from '../widgets/EpisodeCard'
 
 const EpisodesMenu: FC = () => {
 	const { coursesList, currentEpisodesList, updateCurrentEpisodesList } =
-    useContext(CoursesContext)
+		useContext(CoursesContext)
 	const {
 		query: { course },
 	} = useRouter()
@@ -25,12 +25,12 @@ const EpisodesMenu: FC = () => {
 
 	useEffect(() => {
 		if (coursePageData) {
-			(async () => {
+			;(async () => {
 				updateCurrentEpisodesList(await getEpisodesList(coursePageData.id))
 			})()
 		}
 		//eslint-disable-next-line
-  }, [coursePageData]);
+	}, [coursePageData])
 
 	return (
 		<nav className="episodes-menu slim-scrollbar bg-grey5 overflow-y-scroll h-[var(--episodes-height)] bp1:fixed bp1:top-[58px] bp1:left-0 bp1:h-[calc(100vh-58px)] bp1:w-80 bp2:w-96">
