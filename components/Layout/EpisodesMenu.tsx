@@ -1,43 +1,43 @@
-import { useRouter } from "next/router";
-import { FC, useContext, useEffect, useState } from "react";
-import CoursesContext from "../../context/CoursesContext";
-import { getEpisodesList } from "../../service/YouTubeDataService";
-import CardContent from "../../interfaces/CardContent";
-import EpisodeCard from "../widgets/EpisodeCard";
+import { useRouter } from 'next/router'
+import { FC, useContext, useEffect, useState } from 'react'
+import CoursesContext from '../../context/CoursesContext'
+import { getEpisodesList } from '../../service/YouTubeDataService'
+import CardContent from '../../interfaces/CardContent'
+import EpisodeCard from '../widgets/EpisodeCard'
 
 const EpisodesMenu: FC = () => {
-  const { coursesList, currentEpisodesList, updateCurrentEpisodesList } =
-    useContext(CoursesContext);
-  const {
-    query: { course },
-  } = useRouter();
+	const { coursesList, currentEpisodesList, updateCurrentEpisodesList } =
+    useContext(CoursesContext)
+	const {
+		query: { course },
+	} = useRouter()
 
-  const [coursePageData, setCoursePageData] = useState<CardContent>();
+	const [coursePageData, setCoursePageData] = useState<CardContent>()
 
-  useEffect(() => {
-    if (typeof course === "string")
-      setCoursePageData(
-        coursesList.find((courseItem) =>
-          courseItem.courseUrl.includes(`/${course}`)
-        )
-      );
-  }, [course, coursesList]);
+	useEffect(() => {
+		if (typeof course === 'string')
+			setCoursePageData(
+				coursesList.find((courseItem) =>
+					courseItem.courseUrl.includes(`/${course}`)
+				)
+			)
+	}, [course, coursesList])
 
-  useEffect(() => {
-    if (coursePageData) {
-      (async () => {
-        updateCurrentEpisodesList(await getEpisodesList(coursePageData.id));
-      })();
-    }
-    //eslint-disable-next-line
+	useEffect(() => {
+		if (coursePageData) {
+			(async () => {
+				updateCurrentEpisodesList(await getEpisodesList(coursePageData.id))
+			})()
+		}
+		//eslint-disable-next-line
   }, [coursePageData]);
 
-  return (
-    <nav className="episodes-menu slim-scrollbar bg-grey5 overflow-y-scroll h-[var(--episodes-height)] bp1:fixed bp1:top-[58px] bp1:left-0 bp1:h-[calc(100vh-58px)] bp1:w-80 bp2:w-96">
-      {currentEpisodesList.map((episode) => (
-        <EpisodeCard key={episode.episodeId} {...episode} />
-      ))}
-    </nav>
-  );
-};
-export default EpisodesMenu;
+	return (
+		<nav className="episodes-menu slim-scrollbar bg-grey5 overflow-y-scroll h-[var(--episodes-height)] bp1:fixed bp1:top-[58px] bp1:left-0 bp1:h-[calc(100vh-58px)] bp1:w-80 bp2:w-96">
+			{currentEpisodesList.map((episode) => (
+				<EpisodeCard key={episode.episodeId} {...episode} />
+			))}
+		</nav>
+	)
+}
+export default EpisodesMenu
