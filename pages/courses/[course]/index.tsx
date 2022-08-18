@@ -32,7 +32,7 @@ const Course: NextPage = () => {
       })()
     }
     //eslint-disable-next-line
-  }, [coursePageData]);
+  }, [coursePageData])
 
   return (
     <div className="course flex max-w-screen-b3 px-2 py-8 mx-auto sm:px-4 md:px-6">

@@ -13,7 +13,7 @@ const Layout: FC<WrapperComponent> = ({ children }) => {
       updateCoursesList(getExistingCoursesList())
     })()
     // eslint-disable-next-line
-	}, [])
+  }, [])
 
   return (
     <Fragment>

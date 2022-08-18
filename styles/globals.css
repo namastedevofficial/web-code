@@ -1,4 +1,4 @@
-@import url("/fonts/fonts.css");
+@import url('/fonts/fonts.css');
 
 @tailwind base;
 @tailwind components;
@@ -10,7 +10,7 @@
 
 @layer base {
   html {
-    font-family: "Nunito", sans-serif;
+    font-family: 'Nunito', sans-serif;
     scroll-behavior: smooth;
   }
 }

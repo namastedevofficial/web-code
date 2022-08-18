@@ -30,7 +30,7 @@ const EpisodesMenu: FC = () => {
       })()
     }
     //eslint-disable-next-line
-	}, [coursePageData])
+  }, [coursePageData])
 
   return (
     <nav className="episodes-menu slim-scrollbar bg-grey5 overflow-y-scroll h-[var(--episodes-height)] bp1:fixed bp1:top-[58px] bp1:left-0 bp1:h-[calc(100vh-58px)] bp1:w-80 bp2:w-96">
