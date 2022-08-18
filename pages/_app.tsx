@@ -4,13 +4,13 @@ import { CoursesProvider } from '../context/CoursesContext'
 import Layout from '../components/Layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
-	return (
-		<CoursesProvider>
-			<Layout>
-				<Component {...pageProps} />
-			</Layout>
-		</CoursesProvider>
-	)
+  return (
+    <CoursesProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </CoursesProvider>
+  )
 }
 
 export default MyApp

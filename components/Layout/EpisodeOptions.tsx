@@ -8,17 +8,17 @@ import QnASection from './QnASection'
 import QuizzesSection from './QuizzesSection'
 
 const EpisodeOptions: FC = () => {
-	const { width } = useWindowDimensions()
-	const { asPath } = useRouter()
-	return (
-		<div className="episode-options mt-4 max-w-screen-b2 mx-auto">
-			<EpisodeOptionsNav />
-			{(asPath.includes('#episodes') || width > 1020) && <EpisodesMenu />}
-			{asPath.includes('#quizzes') && <QuizzesSection />}
-			{asPath.includes('#qna') && <QnASection />}
-			{asPath.includes('#discussions') && <DiscussionSection />}
-		</div>
-	)
+  const { width } = useWindowDimensions()
+  const { asPath } = useRouter()
+  return (
+    <div className="episode-options mt-4 max-w-screen-b2 mx-auto">
+      <EpisodeOptionsNav />
+      {(asPath.includes('#episodes') || width > 1020) && <EpisodesMenu />}
+      {asPath.includes('#quizzes') && <QuizzesSection />}
+      {asPath.includes('#qna') && <QnASection />}
+      {asPath.includes('#discussions') && <DiscussionSection />}
+    </div>
+  )
 }
 
 export default EpisodeOptions
