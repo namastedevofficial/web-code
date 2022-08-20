@@ -1,13 +1,13 @@
 import { createContext, FC, useState } from 'react'
-import CardContent from '../interfaces/CardContent'
-import EpisodeCardContent from '../interfaces/EpisodeCardContents'
+import CourseData from '../interfaces/CourseData'
+import EpisodeData from '../interfaces/EpisodeData'
 import WrapperComponent from '../interfaces/WrapperComponent'
 
 interface CoursesContextType {
-  coursesList: CardContent[]
-  currentEpisodesList: EpisodeCardContent[]
-  updateCoursesList: (course: CardContent[]) => void
-  updateCurrentEpisodesList: (course: EpisodeCardContent[]) => void
+  coursesList: CourseData[]
+  currentEpisodesList: EpisodeData[]
+  updateCoursesList: (course: CourseData[]) => void
+  updateCurrentEpisodesList: (course: EpisodeData[]) => void
 }
 
 const CoursesContext = createContext<CoursesContextType>({
@@ -18,16 +18,16 @@ const CoursesContext = createContext<CoursesContextType>({
 })
 
 export const CoursesProvider: FC<WrapperComponent> = ({ children }) => {
-  const [coursesList, setCourses] = useState<CardContent[]>([])
-  const [currentEpisodesList, setCurrentEpisodesList] = useState<
-    EpisodeCardContent[]
-  >([])
+  const [coursesList, setCourses] = useState<CourseData[]>([])
+  const [currentEpisodesList, setCurrentEpisodesList] = useState<EpisodeData[]>(
+    []
+  )
 
-  function updateCoursesList(coursesList: CardContent[]) {
+  function updateCoursesList(coursesList: CourseData[]) {
     setCourses(coursesList)
   }
 
-  function updateCurrentEpisodesList(episodesList: EpisodeCardContent[]) {
+  function updateCurrentEpisodesList(episodesList: EpisodeData[]) {
     setCurrentEpisodesList(episodesList)
   }
 

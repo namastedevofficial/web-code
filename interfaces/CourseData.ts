@@ -1,9 +1,10 @@
-export default interface CardContent {
+import EpisodeData from './EpisodeData'
+export default interface CourseData {
   courseId: string
   title: string
   courseUrl: string
   imageUrl: string
   description: string
-  episodeCount: number
+  episodes: EpisodeData[]
   author: string
 }

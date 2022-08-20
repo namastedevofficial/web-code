@@ -1,4 +1,4 @@
-export default interface EpisodeCardContent {
+export default interface EpisodeData {
   title: string
   description: string
   imageUrl: string

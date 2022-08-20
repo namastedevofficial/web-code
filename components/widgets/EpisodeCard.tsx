@@ -1,14 +1,10 @@
 import { useRouter } from 'next/router'
 import React, { FC, useEffect, useState } from 'react'
-import EpisodeCardContent from '../../interfaces/EpisodeCardContents'
+import EpisodeData from '../../interfaces/EpisodeData'
 import CheckIcon from '../Icons/CheckIcon'
 import NavLink from '../utils/NavLink'
 
-const EpisodeCard: FC<EpisodeCardContent> = ({
-  episodeId,
-  title,
-  episodeNumber,
-}) => {
+const EpisodeCard: FC<EpisodeData> = ({ episodeId, title, episodeNumber }) => {
   const [completed, setCompleted] = useState('')
   const toggleCompleted = () => setCompleted(completed ? '' : 'completed')
 

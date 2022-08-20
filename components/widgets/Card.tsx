@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
-import CardContent from '../../interfaces/CardContent'
+import CourseData from '../../interfaces/CourseData'
 
-const Card: FC<CardContent> = ({
+const Card: FC<CourseData> = ({
   courseUrl,
   imageUrl,
   title,
-  episodeCount,
+  episodes,
   author,
 }) => {
   return (
@@ -24,7 +24,7 @@ const Card: FC<CardContent> = ({
           <h2 className="text-xl opacity-90 font-semibold">{title}</h2>
           <p className="text-sm opacity-80 my-0.5">{author}</p>
           <p className="text-xs opacity-70">
-            {episodeCount} episode{episodeCount > 1 && 's'}
+            {episodes.length} episode{episodes.length > 1 && 's'}
           </p>
         </div>
       </a>

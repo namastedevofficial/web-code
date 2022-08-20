@@ -1,12 +1,18 @@
-export const getCoursesList = async () => {
-  const response = await fetch('http://localhost:5000/api/courses')
-  const data = await response.json()
+import CourseData from '../interfaces/CourseData'
+import EpisodeData from '../interfaces/EpisodeData'
+
+const baseUrl = 'http://localhost:5000/api'
+
+export const getCoursesList = async (): Promise<CourseData[]> => {
+  const response = await fetch(`${baseUrl}/courses`)
+  const data: CourseData[] = await response.json()
   return data
 }
 
-export const getEpisodesList = async (courseUrl: string) => {
-  console.log(courseUrl)
-  const response = await fetch('http://localhost:5000/api/course', {
+export const getEpisodesList = async (
+  courseUrl: string
+): Promise<EpisodeData[]> => {
+  const response = await fetch(`${baseUrl}/course`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -14,7 +20,6 @@ export const getEpisodesList = async (courseUrl: string) => {
     }),
   })
 
-  const data = await response.json()
-  console.log(data)
+  const data: CourseData = await response.json()
   return data.episodes
 }

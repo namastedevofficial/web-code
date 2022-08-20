@@ -4,13 +4,13 @@ import { useContext, useEffect, useState } from 'react'
 import EpisodeOptions from '../../../components/Layout/EpisodeOptions'
 import VideoPlayer from '../../../components/Layout/VideoPlayer'
 import CoursesContext from '../../../context/CoursesContext'
-import EpisodeCardContent from '../../../interfaces/EpisodeCardContents'
+import EpisodeData from '../../../interfaces/EpisodeData'
 
 const Episode: NextPage = () => {
   const { query } = useRouter()
   const { currentEpisodesList } = useContext(CoursesContext)
 
-  const [currentVideo, setCurrentVideo] = useState<EpisodeCardContent>()
+  const [currentVideo, setCurrentVideo] = useState<EpisodeData>()
 
   useEffect(() => {
     setCurrentVideo(

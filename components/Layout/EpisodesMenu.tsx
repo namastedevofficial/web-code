@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import { FC, useContext, useEffect, useState } from 'react'
 import CoursesContext from '../../context/CoursesContext'
 import { getEpisodesList } from '../../services/NamasteDevService'
-import CardContent from '../../interfaces/CardContent'
+import CourseData from '../../interfaces/CourseData'
 import EpisodeCard from '../widgets/EpisodeCard'
 
 const EpisodesMenu: FC = () => {
@@ -12,7 +12,7 @@ const EpisodesMenu: FC = () => {
     query: { course },
   } = useRouter()
 
-  const [coursePageData, setCoursePageData] = useState<CardContent>()
+  const [coursePageData, setCoursePageData] = useState<CourseData>()
 
   useEffect(() => {
     if (typeof course === 'string')
