@@ -1,5 +1,5 @@
 export default interface CardContent {
-  id: string
+  courseId: string
   title: string
   courseUrl: string
   imageUrl: string

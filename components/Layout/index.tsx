@@ -1,6 +1,6 @@
 import { FC, Fragment, useContext, useEffect } from 'react'
 import CoursesContext from '../../context/CoursesContext'
-import { getExistingCoursesList } from '../../service/YouTubeDataService'
+import { getCoursesList } from '../../services/NamasteDevService'
 import WrapperComponent from '../../interfaces/WrapperComponent'
 import Header from './Header'
 
@@ -9,8 +9,8 @@ const Layout: FC<WrapperComponent> = ({ children }) => {
 
   useEffect(() => {
     ;(async () => {
-      // updateCoursesList(await getCoursesList());
-      updateCoursesList(getExistingCoursesList())
+      updateCoursesList(await getCoursesList())
+      // updateCoursesList(getExistingCoursesList())
     })()
     // eslint-disable-next-line
   }, [])

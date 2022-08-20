@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useContext, useEffect, useState } from 'react'
 import CoursesContext from '../../../context/CoursesContext'
-import { getEpisodesList } from '../../../service/YouTubeDataService'
+import { getEpisodesList } from '../../../services/NamasteDevService'
 import CardContent from '../../../interfaces/CardContent'
 
 const Course: NextPage = () => {
@@ -28,7 +28,9 @@ const Course: NextPage = () => {
   useEffect(() => {
     if (coursePageData) {
       ;(async () => {
-        updateCurrentEpisodesList(await getEpisodesList(coursePageData.id))
+        updateCurrentEpisodesList(
+          await getEpisodesList(coursePageData.courseUrl)
+        )
       })()
     }
     //eslint-disable-next-line
@@ -66,7 +68,7 @@ const Course: NextPage = () => {
             <a className="flex py-2 pl-4  hover:bg-grey5">
               <div>
                 <Image
-                  src={episode.imgUrl}
+                  src={episode.imageUrl}
                   width={160}
                   height={90}
                   className="rounded-md w-full"

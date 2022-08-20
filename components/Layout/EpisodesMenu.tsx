@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { FC, useContext, useEffect, useState } from 'react'
 import CoursesContext from '../../context/CoursesContext'
-import { getEpisodesList } from '../../service/YouTubeDataService'
+import { getEpisodesList } from '../../services/NamasteDevService'
 import CardContent from '../../interfaces/CardContent'
 import EpisodeCard from '../widgets/EpisodeCard'
 
@@ -26,7 +26,9 @@ const EpisodesMenu: FC = () => {
   useEffect(() => {
     if (coursePageData) {
       ;(async () => {
-        updateCurrentEpisodesList(await getEpisodesList(coursePageData.id))
+        updateCurrentEpisodesList(
+          await getEpisodesList(coursePageData.courseUrl)
+        )
       })()
     }
     //eslint-disable-next-line

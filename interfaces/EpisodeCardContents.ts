@@ -1,7 +1,7 @@
 export default interface EpisodeCardContent {
   title: string
   description: string
-  imgUrl: string
+  imageUrl: string
   episodeNumber: number
   episodeId: string
 }

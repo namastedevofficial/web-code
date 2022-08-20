@@ -11,7 +11,7 @@ const nextConfig = {
 			'utils',
 			'components',
 			'context',
-			'service',
+			'services',
 			'hooks',
 			'interfaces',
 		],
